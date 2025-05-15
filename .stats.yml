@@ -1,4 +1,4 @@
 configured_endpoints: 10
 openapi_spec_url: https://storage.googleapis.com/stainless-sdk-openapi-specs/scholarai-inc%2Fscholarai-de378d228926a64debc21c9ac6b937eb30e2f1d2e9101e6dc418ae6ad9848499.yml
 openapi_spec_hash: 940f64d1c94a4747b3901aeb70906c51
-config_hash: a69f28237c4de2a1e0dcf947f8d763fc
+config_hash: 545a4d42227357fa895a504b51054ed9
