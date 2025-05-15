@@ -9,8 +9,8 @@ It is generated with [Stainless](https://www.stainless.com/).
 Because it's not published yet, clone the repo and build it:
 
 ```sh
-git clone git@github.com:stainless-sdks/scholarai-typescript.git
-cd scholarai-typescript
+git clone git@github.com:Project-Scholar-AI/scholarai-sdk-typescript.git
+cd scholarai-sdk-typescript
 ./scripts/bootstrap
 ./scripts/build
 ```
@@ -40,7 +40,11 @@ For clients with a configuration JSON, it might look something like this:
   "mcpServers": {
     "scholarai_api": {
       "command": "node",
-      "args": ["/path/to/local/scholarai-typescript/packages/mcp-server", "--client=claude", "--tools=all"],
+      "args": [
+        "/path/to/local/scholarai-sdk-typescript/packages/mcp-server",
+        "--client=claude",
+        "--tools=all"
+      ],
       "env": {
         "SCHOLARAI_API_KEY": "My API Key"
       }
