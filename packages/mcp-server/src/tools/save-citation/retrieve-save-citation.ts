@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'save_citation',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/save-citation',
+  operationId: 'api_save_citation',
 };
 
 export const tool: Tool = {

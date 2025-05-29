@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'analyze_project',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/analyze_project',
+  operationId: 'api_analyze_project',
 };
 
 export const tool: Tool = {
