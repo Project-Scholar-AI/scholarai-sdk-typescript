@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'patents',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/patents',
+  operationId: 'searchPatents',
 };
 
 export const tool: Tool = {

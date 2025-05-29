@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   resource: 'fulltext',
   operation: 'read',
   tags: [],
+  httpMethod: 'get',
+  httpPath: '/api/fulltext',
+  operationId: 'api_get_fulltext',
 };
 
 export const tool: Tool = {
