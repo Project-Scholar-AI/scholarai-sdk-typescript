@@ -1,5 +1,7 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
+import { asTextContentResult } from 'scholarai-mcp/tools/types';
+
 import { Tool } from '@modelcontextprotocol/sdk/types.js';
 import type { Metadata } from '../';
 import Scholarai from 'scholarai';
@@ -39,9 +41,9 @@ export const tool: Tool = {
   },
 };
 
-export const handler = (client: Scholarai, args: Record<string, unknown> | undefined) => {
+export const handler = async (client: Scholarai, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  return client.analyzeProject.batchAnalyze(body);
+  return asTextContentResult(await client.analyzeProject.batchAnalyze(body));
 };
 
 export default { metadata, tool, handler };
