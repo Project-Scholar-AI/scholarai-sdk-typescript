@@ -1,7 +1,8 @@
 // File generated from our OpenAPI spec by Stainless. See CONTRIBUTING.md for details.
 
-import Scholarai from 'scholarai';
-import { Tool } from '@modelcontextprotocol/sdk/types.js';
+import { Metadata, Endpoint, HandlerFunction } from './types';
+
+export { Metadata, Endpoint, HandlerFunction };
 
 import create_completion_chat from './chat/create-completion-chat';
 import retrieve_fulltext from './fulltext/retrieve-fulltext';
@@ -13,24 +14,6 @@ import create_add_to_project from './add-to-project/create-add-to-project';
 import retrieve_add_to_project from './add-to-project/retrieve-add-to-project';
 import create_create_project from './create-project/create-create-project';
 import batch_analyze_analyze_project from './analyze-project/batch-analyze-analyze-project';
-
-export type HandlerFunction = (client: Scholarai, args: Record<string, unknown> | undefined) => Promise<any>;
-
-export type Metadata = {
-  resource: string;
-  operation: 'read' | 'write';
-  tags: string[];
-
-  httpMethod?: string;
-  httpPath?: string;
-  operationId?: string;
-};
-
-export type Endpoint = {
-  metadata: Metadata;
-  tool: Tool;
-  handler: HandlerFunction;
-};
 
 export const endpoints: Endpoint[] = [];
 
