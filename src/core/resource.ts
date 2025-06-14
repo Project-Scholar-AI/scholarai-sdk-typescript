@@ -2,7 +2,7 @@
 
 import type { Scholarai } from '../client';
 
-export class APIResource {
+export abstract class APIResource {
   protected _client: Scholarai;
 
   constructor(client: Scholarai) {
