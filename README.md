@@ -1,6 +1,6 @@
 # Scholarai TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/scholarai.svg)](https://npmjs.org/package/scholarai) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/scholarai)
+[![NPM version](<https://img.shields.io/npm/v/scholarai.svg?label=npm%20(stable)>)](https://npmjs.org/package/scholarai) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/scholarai)
 
 This library provides convenient access to the Scholarai REST API from server-side TypeScript or JavaScript.
 
