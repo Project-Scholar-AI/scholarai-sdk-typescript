@@ -53,8 +53,8 @@ export const tool: Tool = {
 
 export const handler = async (client: Scholarai, args: Record<string, unknown> | undefined) => {
   const body = args as any;
-  await client.chat.createCompletion(body);
-  return asTextContentResult('Successful tool call');
+  const response = await client.chat.createCompletion(body).asResponse();
+  return asTextContentResult(await response.text());
 };
 
 export default { metadata, tool, handler };
