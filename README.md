@@ -1,6 +1,6 @@
 # Scholarai TypeScript API Library
 
-[![NPM version](https://img.shields.io/npm/v/scholarai.svg)](https://npmjs.org/package/scholarai) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/scholarai)
+[![NPM version](<https://img.shields.io/npm/v/scholarai.svg?label=npm%20(stable)>)](https://npmjs.org/package/scholarai) ![npm bundle size](https://img.shields.io/bundlephobia/minzip/scholarai)
 
 This library provides convenient access to the Scholarai REST API from server-side TypeScript or JavaScript.
 
@@ -26,11 +26,7 @@ const client = new Scholarai({
   apiKey: process.env['SCHOLARAI_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  await client.chat.createCompletion();
-}
-
-main();
+await client.chat.createCompletion();
 ```
 
 ### Request & Response types
@@ -45,11 +41,7 @@ const client = new Scholarai({
   apiKey: process.env['SCHOLARAI_API_KEY'], // This is the default and can be omitted
 });
 
-async function main() {
-  await client.chat.createCompletion();
-}
-
-main();
+await client.chat.createCompletion();
 ```
 
 Documentation for each method, request param, and response field are available in docstrings and will appear on hover in most modern editors.
@@ -62,19 +54,15 @@ a subclass of `APIError` will be thrown:
 
 <!-- prettier-ignore -->
 ```ts
-async function main() {
-  const response = await client.chat.createCompletion().catch(async (err) => {
-    if (err instanceof Scholarai.APIError) {
-      console.log(err.status); // 400
-      console.log(err.name); // BadRequestError
-      console.log(err.headers); // {server: 'nginx', ...}
-    } else {
-      throw err;
-    }
-  });
-}
-
-main();
+const response = await client.chat.createCompletion().catch(async (err) => {
+  if (err instanceof Scholarai.APIError) {
+    console.log(err.status); // 400
+    console.log(err.name); // BadRequestError
+    console.log(err.headers); // {server: 'nginx', ...}
+  } else {
+    throw err;
+  }
+});
 ```
 
 Error codes are as follows:
@@ -232,9 +220,8 @@ parameter. This library doesn't validate at runtime that the request matches the
 send will be sent as-is.
 
 ```ts
-client.foo.create({
-  foo: 'my_param',
-  bar: 12,
+client.chat.createCompletion({
+  // ...
   // @ts-expect-error baz is not yet public
   baz: 'undocumented option',
 });
