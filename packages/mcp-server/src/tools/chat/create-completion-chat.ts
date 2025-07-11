@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 export const tool: Tool = {
   name: 'create_completion_chat',
   description:
-    'Mimics the input and output to the OpenAI Chat Completion API: https://platform.openai.com/docs/api-reference/chat/create',
+    "When using this tool, always use the `jq_filter` parameter to reduce the response size and improve performance.\n\nOnly omit if you're sure you don't need the data.\n\nMimics the input and output to the OpenAI Chat Completion API: https://platform.openai.com/docs/api-reference/chat/create\n\n# Response Schema\n```json\n{\n  type: 'object',\n  properties: {}\n}\n```",
   inputSchema: {
     type: 'object',
     properties: {
@@ -46,6 +46,12 @@ export const tool: Tool = {
       stream: {
         type: 'boolean',
         description: 'Whether or not to stream the response. Streaming is recommended!',
+      },
+      jq_filter: {
+        type: 'string',
+        title: 'jq Filter',
+        description:
+          'A jq filter to apply to the response to include certain fields. Consult the output schema in the tool description to see the fields that are available.\n\nFor example: to include only the `name` field in every object of a results array, you can provide ".results[].name".\n\nFor more information, see the [jq documentation](https://jqlang.org/manual/).',
       },
     },
   },
